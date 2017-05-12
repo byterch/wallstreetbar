@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/categories/list', ['uses' => 'CategoriesController@index']);
 Route::get('/categories/create', ['uses' => 'CategoriesController@create']);
 Route::post('/categories/save', ['uses' => 'CategoriesController@save']);
+Auth::routes();
+Route::resource('/products', 'ProductController');
+
+Route::get('/home', 'HomeController@index')->name('home');
